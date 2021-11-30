@@ -17,6 +17,9 @@ ng g component  modulos/seguridad/identificacion
 - Generar componente para el registro de usuarios
 ng g component  modulos/administracion/usuarios/crear-usuario
 
+- Generar componente para el envío de mensaje de contacto
+ng g component modulos/contacto/envio-mensaje
+
 - Generar componentes comunes
 ng g c plantilla/barra-navegacion
 ng g c plantilla/pie-pagina
