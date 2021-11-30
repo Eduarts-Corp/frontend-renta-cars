@@ -18,6 +18,14 @@ const routes: Routes = [
     loadChildren: () => import("./modulos/seguridad/seguridad.module").then(x => x.SeguridadModule)
   },
   {
+    path: "administracion",
+    loadChildren: () => import("./modulos/administracion/administracion.module").then(x => x.AdministracionModule)
+  },
+  {
+    path: "contacto",
+    loadChildren: () => import("./modulos/contacto/contacto.module").then(x => x.ContactoModule)
+  },
+  {
     path: "**",
     component: ErrorComponent
   }
