@@ -1,4 +1,27 @@
 # FrontendRentaCar
+```
+- Instalar Angular CLI 
+npm install -g @angular/cli
+
+- Generar app
+ng new FrontendRentaCar
+
+- Generar módulos de seguridad, administración y contacto
+ng generate module modulos/seguridad --routing
+ng generate module modulos/administracion --routing
+ng generate module modulos/contacto --routing
+
+- Generar componente para la identificación de usuarios o login
+ng g component  modulos/seguridad/identificacion
+
+- Generar componente para el registro de usuarios
+ng g component  modulos/administracion/usuarios/crear-usuario
+
+- Generar componentes comunes
+ng g c plantilla/barra-navegacion
+ng g c plantilla/pie-pagina
+ng g c plantilla/inicio
+```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
