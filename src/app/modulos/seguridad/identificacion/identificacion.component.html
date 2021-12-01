@@ -1,1 +1,23 @@
-<p>identificacion works!</p>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-4 text-uppercase text-center mb-5">Inicio de sesión</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 mb-2">
+                <div class="contact-form bg-light mb-4" style="padding: 30px;">
+                    <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()">
+                        <div class="form-group">
+                            <input formControlName="usuario" type="email" class="form-control p-4" placeholder="Correo" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input formControlName="clave" type="password" class="form-control p-4" placeholder="Contraseña" required="required">
+                        </div>
+                        
+                        <div>
+                            <button [disabled]="!fgValidador.valid" class="btn btn-primary py-3 px-5" type="submit">Iniciar sesión</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
