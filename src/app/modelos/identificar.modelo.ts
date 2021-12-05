@@ -2,5 +2,6 @@ import { ModeloDatos } from "./datos.modelo";
 
 export class ModeloIdentificar {
     datos?: ModeloDatos;
-    tk?: String
+    tk?: String;
+    estaIdentificado: boolean = false;
 }

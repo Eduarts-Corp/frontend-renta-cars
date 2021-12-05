@@ -26,9 +26,9 @@ export class IdentificacionComponent implements OnInit {
     let clave = this.fgValidador.controls["clave"].value;
     let claveCifrada = cryptojs.MD5(clave).toString();
     this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos: any) => {
-      // TODO
+      this.servicioSeguridad.AlmacenarSesion(datos);
     }, ( error: any ) => {
-      // TODO
+      alert("Datos inválidos");
     })
   }
 
