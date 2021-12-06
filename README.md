@@ -11,6 +11,8 @@ ng s
 Recordar, además, que se debe tener la aplicación del backend corriendo al igual que el servicio en flask, con el fin de que todas las operaciones y envío de mensajería funcionen correctamente.
 
 ```
+A continuación, los pasos para generar la app y su estructura inicial.
+
 - Instalar Angular CLI 
 npm install -g @angular/cli
 
