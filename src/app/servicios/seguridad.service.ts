@@ -20,6 +20,7 @@ export class SeguridadService {
     }
   }
 
+  // retorna un observable que contiene una estructura definida por los datos del usuario y el token 
   Identificar(usuario: string, clave: string): Observable<ModeloIdentificar> {
     return this.http.post<ModeloIdentificar>(`${this.url}/identificarUsuario`, {
       usuario: usuario,
@@ -29,6 +30,7 @@ export class SeguridadService {
     });
   }
 
+  // se guardan los datos de sesión en el localStorage como una cadena de texto
   AlmacenarSesion(datos: ModeloIdentificar) {
     datos.estaIdentificado = true;
     let stringDatos = JSON.stringify(datos);
@@ -36,6 +38,7 @@ export class SeguridadService {
     this.RefrescarDatosSesion(datos);
   }
 
+  // acceder a los datos de la sesión q están almacenados en el localStorage
   ObtenerInformacionSesion(){
     let datosString = localStorage.getItem("datosSesion");
     if(datosString){
