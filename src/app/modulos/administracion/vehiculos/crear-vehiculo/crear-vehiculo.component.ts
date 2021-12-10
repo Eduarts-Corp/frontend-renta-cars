@@ -53,7 +53,7 @@ export class CrearVehiculoComponent implements OnInit {
     p.enlace_video= enlace_video;    
     p.estado= estado;   
     p.valor_alquiler= valor_alquiler;
-    p.nombre_encargado= nombre_encargado;
+    p.nombre_encargado= nombre_encargado;  
     p.contacto_encargado = contacto_encargado;
 
     this.servicioVehiculo.CrearVehiculo(p).subscribe((datos: ModelVehiculo) =>{
