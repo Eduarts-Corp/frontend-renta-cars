@@ -57,7 +57,8 @@ export class CrearVehiculoComponent implements OnInit {
     p.contacto_encargado = contacto_encargado;
 
     this.servicioVehiculo.CrearVehiculo(p).subscribe((datos: ModelVehiculo) =>{
-      alert("Vehiculo Almacenado Correctamente");     
+      alert("Vehiculo Almacenado Correctamente");   
+      this.router.navigate(["/administracion/buscar-vehiculo"]);  
     }, (error:any) => {
       alert ("Error almacenando el vehiculo");
 

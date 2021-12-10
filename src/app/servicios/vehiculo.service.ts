@@ -16,11 +16,14 @@ export class VehiculoService {
    private seguridadServicios: SeguridadService) {
     this.token = this.seguridadServicios.ObtenerToken();
    } 
-   CrearVehiculo(vehiculo:ModelVehiculo): Observable<ModelVehiculo>{
+   CrearVehiculo(vehiculo:ModelVehiculo): Observable<ModelVehiculo>{  // Metodo para crear Vehiculo
     return this.http.post<ModelVehiculo>(`${this.url}/vehiculos`, vehiculo,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
     })
   }) 
 }
+  ObtenerRegistros(): Observable<ModelVehiculo[]>{    //Metodo para Buscar Vehiculos(listar)
+    return this.http.get<ModelVehiculo[]>(`${this.url}/vehiculos`);
+  }
 }  

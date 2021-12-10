@@ -1,1 +1,33 @@
-<p>buscar-vehiculo works!</p>
+
+<a routerLink="/administracion/crear-vehiculo"  class="btn btn-primary py-3 px-5"> Crear Nuevo Vehiculo</a>
+
+<table class= "table responsive">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Ruta_Foto<th>
+            <th>Enlace_Video<th>
+            <th>Estado</th>
+            <th>Valor_Alquiler</th>
+            <th>Nombre_Encargado</th>
+            <th>Contacto_Encargado</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let p of listadoRegistros">
+            <td>"{{p.nombre}}"</td>
+            <td>"{{p.tipo}}"</td>
+            <td><img src="{{p.ruta_foto}}" class="imagenVehiculo"/></td>
+            <div></div>            
+            <td>"{{p.enlace_video}}"</td>
+            <div></div>
+            <td>"{{p.estado}}"</td>
+            <td>"{{p.valor_alquiler}}"</td>
+            <td>"{{p.nombre_encargado}}"</td>
+            <td>"{{p.contacto_encargado}}"</td>     
+        </tr>
+    </tbody>
+</table>
