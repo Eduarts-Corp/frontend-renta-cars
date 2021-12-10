@@ -1,5 +1,18 @@
 # FrontendRentaCar
+
+Una vez clonado el repo solo es necesario darle el comando:
+
+npm i
+
+en la consola para que instale los paquetes que se encuentra en el archivo package.json. Una vez hecho esto, se debe poder ejecutar la aplicación sin errores al darle el comando:
+
+ng s
+
+Recordar, además, que se debe tener la aplicación del backend corriendo al igual que el servicio en flask, con el fin de que todas las operaciones y envío de mensajería funcionen correctamente.
+
 ```
+A continuación, los pasos para generar la app y su estructura inicial.
+
 - Instalar Angular CLI 
 npm install -g @angular/cli
 
