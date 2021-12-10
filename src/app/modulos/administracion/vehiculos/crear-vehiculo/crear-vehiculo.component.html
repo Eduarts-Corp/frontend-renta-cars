@@ -1,0 +1,48 @@
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3"></div>
+        <h1 class="display-4 text-uppercase text-center mb-5">Creacion de Vehiculos</h1>    
+            <div class="row">    
+                <div class="col-lg-7 mb-2"></div>
+                  <div class="contact-form bg-light mb-4" style="padding: 30px;">            
+       
+                         <article class= "col s6 offset-s3">
+<!--  -->
+            <form [formGroup] = "fgValidador" (ngSubmit)= "GuardarVehiculo()">
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <input formControlName="nombre" type="text" class="form-control p-4" placeholder="Marca" required="required">                        
+                      </div>
+                    <div class="col-6 form-group">
+                      <!--  <input formControlName="nombre" type="text" class="form-control p-4" placeholder="Marca" required="required">-->
+                      <input formControlName="tipo" type="text" class="form-control p-4" placeholder="tipo" required="required">
+                    </div>
+                    <div class="col-6 form-group">
+                   <!-- <input formControlName="tipo" type="text" class="form-control p-4" placeholder="Tipo" required="required"> -->
+                      <input formControlName="ruta_foto" type="text" class="form-control p-4" placeholder="Foto" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 form-group">
+                   <!-- <input formControlName="estado" type="text" class="form-control p-4" placeholder="Estado" required="required">-->
+                   <input formControlName="enlace_video" type="text" class="form-control p-4" placeholder="Video" required="required">
+                    </div>
+                    <div class="col-6 form-group">
+                        <input formControlName="estado" type="text" class="form-control p-4" placeholder="Estado del Vehiculo" required="required">
+                    </div>
+                    <div class="col-12 form-group">
+                        <input formControlName="valor_alquiler" type="number" class="form-control p-4" placeholder="Costo Valor dia de Alquiler - (COP $$$$)" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <input formControlName="nombre_encargado" type="text" class="form-control p-4" placeholder="Nombre_encargado" required="required">
+                    </div>
+                    <div class="col-6 form-group">
+                        <input formControlName="contacto_encargado" type="text" class="form-control p-4" placeholder="Contacto_encargado" required="required">
+                    </div>
+
+                    <div>
+                        <button  class="btn btn-primary py-3 px-5" type="submit">Guardar Vehiculo</button>
+                    </div>
+             
+                 
