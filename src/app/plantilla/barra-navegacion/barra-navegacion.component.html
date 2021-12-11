@@ -25,9 +25,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                 <div class="navbar-nav ml-auto py-0">
-                    <a routerLink="/inicio" class="nav-item nav-link active">Home</a>
+                    <a routerLink="/inicio" class="nav-item nav-link">Home</a>
                     <a *ngIf="!sesionIniciada" routerLink="/seguridad/login" class="nav-item nav-link">Iniciar Sesión</a>
                     <a *ngIf="!sesionIniciada" routerLink="/administracion/crear-usuario" class="nav-item nav-link">Registro</a>
+                    <a routerLink="/administracion/listar-vehiculos" class="nav-item nav-link active">Vehículos</a>
                     <a routerLink="/contacto/envio-mensaje" class="nav-item nav-link">Contacto</a>
                     <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion" class="nav-item nav-link ">Cerrar Sesión</a>
                 </div>

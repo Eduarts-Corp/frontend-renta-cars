@@ -181,6 +181,14 @@ h6,
     color: var(--light);
 }
 
+.rent-item span {
+    font-size: 12px;
+}
+
+.rent-item i {
+    font-size: 13px;
+}
+
 .team-item {
     padding: 30px 30px 0 30px;
     text-align: center;
