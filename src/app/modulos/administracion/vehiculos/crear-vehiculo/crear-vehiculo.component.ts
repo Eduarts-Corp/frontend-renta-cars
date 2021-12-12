@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ModelVehiculo } from 'src/app/modelos/vehiculo.modelo';
+import { ModeloVehiculo } from 'src/app/modelos/vehiculo.modelo';
 import { VehiculoService } from 'src/app/servicios/vehiculo.service';
 
 @Component({
@@ -41,11 +41,11 @@ export class CrearVehiculoComponent implements OnInit {
     let ruta_foto = this.fgValidador.controls["ruta_foto"].value;
     let enlace_video = this.fgValidador.controls["enlace_video"].value;
     let estado = this.fgValidador.controls["estado"].value;    
-    let valor_alquiler = parseInt(this.fgValidador.controls["valor_alquiler"].value); 
+    let valor_alquiler = parseFloat(this.fgValidador.controls["valor_alquiler"].value); 
     let nombre_encargado = this.fgValidador.controls["nombre_encargado"].value;
     let contacto_encargado = this.fgValidador.controls["contacto_encargado"].value; 
     
-    let p = new ModelVehiculo();
+    let p = new ModeloVehiculo();
 
     p.nombre= nombre;
     p.tipo= tipo;
@@ -56,7 +56,7 @@ export class CrearVehiculoComponent implements OnInit {
     p.nombre_encargado= nombre_encargado;  
     p.contacto_encargado = contacto_encargado;
 
-    this.servicioVehiculo.CrearVehiculo(p).subscribe((datos: ModelVehiculo) =>{
+    this.servicioVehiculo.CrearVehiculo(p).subscribe((datos: ModeloVehiculo) =>{
       alert("Vehiculo Almacenado Correctamente");   
       this.router.navigate(["/administracion/buscar-vehiculo"]);  
     }, (error:any) => {

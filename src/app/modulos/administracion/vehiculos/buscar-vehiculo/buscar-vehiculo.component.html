@@ -11,8 +11,10 @@
             <th>Estado</th>
             <th>Valor_Alquiler</th>
             <th>Nombre_Encargado</th>
-            <th>Contacto_Encargado</th>
-            <th>Editar</th>
+            <th>Contacto_Encargado</th>      
+            <th colspan="2" class="center">Editar</th>    <!--El colspan es como si estuviera uniendo 2 celdas en una sola-->
+            <th>Eliminar</th>
+            
         </tr>
     </thead>
 
@@ -27,7 +29,10 @@
             <td>"{{p.estado}}"</td>
             <td>"{{p.valor_alquiler}}"</td>
             <td>"{{p.nombre_encargado}}"</td>
-            <td>"{{p.contacto_encargado}}"</td>     
+            <td>"{{p.contacto_encargado}}"</td> 
+            <td><a routerLink="/administracion/editar-vehiculo/{{p.id}}" class="btn btn-primary py-6 px-2">Editar Vehiculo</a></td>  
+            <div></div>
+            <td><a routerLink="/administracion/eliminar-vehiculo/{{p.id}}" class="btn btn-primary py-6 px-2">Eliminar Vehiculo</a></td>    
         </tr>
     </tbody>
 </table>

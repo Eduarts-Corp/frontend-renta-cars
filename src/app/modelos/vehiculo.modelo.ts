@@ -1,4 +1,4 @@
-export class ModelVehiculo{
+export class ModeloVehiculo{
     id?: string;  
     nombre?:string;      
     tipo?: string; 

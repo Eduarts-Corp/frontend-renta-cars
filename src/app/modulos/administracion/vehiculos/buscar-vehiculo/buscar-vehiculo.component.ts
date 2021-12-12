@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModelVehiculo } from 'src/app/modelos/vehiculo.modelo';
+import { ModeloVehiculo } from 'src/app/modelos/vehiculo.modelo';
 import { VehiculoService } from 'src/app/servicios/vehiculo.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { VehiculoService } from 'src/app/servicios/vehiculo.service';
 export class BuscarVehiculoComponent implements OnInit {
 
 
-  listadoRegistros : ModelVehiculo[] = [];
+  listadoRegistros : ModeloVehiculo[] = [];
 
 //Aqui construimos el segundo metodo para poderlo consultar, antes fue necesario ir a Vehiculos.service.ts para crear alla el metodo
 
@@ -22,7 +22,7 @@ export class BuscarVehiculoComponent implements OnInit {
     this.ObtenerListadoVehiculos();  
   }
   ObtenerListadoVehiculos(){
-    this.vehiculoServicio.ObtenerRegistros().subscribe((datos:ModelVehiculo[])=>{
+    this.vehiculoServicio.ObtenerRegistros().subscribe((datos:ModeloVehiculo[])=>{
       this.listadoRegistros = datos;    
     })
   }

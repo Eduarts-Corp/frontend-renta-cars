@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ModelVehiculo } from '../modelos/vehiculo.modelo';
+import { ModeloVehiculo } from '../modelos/vehiculo.modelo';
 import { SeguridadService } from './seguridad.service';
 
 @Injectable({
@@ -16,14 +16,36 @@ export class VehiculoService {
    private seguridadServicios: SeguridadService) {
     this.token = this.seguridadServicios.ObtenerToken();
    } 
-   CrearVehiculo(vehiculo:ModelVehiculo): Observable<ModelVehiculo>{  // Metodo para crear Vehiculo
-    return this.http.post<ModelVehiculo>(`${this.url}/vehiculos`, vehiculo,{
+   CrearVehiculo(vehiculo:ModeloVehiculo): Observable<ModeloVehiculo>{  // Metodo para crear Vehiculo
+    return this.http.post<ModeloVehiculo>(`${this.url}/vehiculos`, vehiculo,{
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
     })
   }) 
 }
-  ObtenerRegistros(): Observable<ModelVehiculo[]>{    //Metodo para Buscar Vehiculos(listar)
-    return this.http.get<ModelVehiculo[]>(`${this.url}/vehiculos`);
+  ObtenerRegistros(): Observable<ModeloVehiculo[]>{    //Metodo para Buscar Vehiculos(listar)
+    return this.http.get<ModeloVehiculo[]>(`${this.url}/vehiculos`);
+
+   /*aca en ObtenerRegistrosPorId se estaba enviando el Observable<ModeloVehiculo[] (Vacio) pero en 
+   editar-vehiculo.components.ts tenia un problema ya que alli le solicito enviar los parametros pero aca abajo voy
+   a quitar los vacios para solucionar temporalmente el problema*/ 
   }
-}  
+  ObtenerRegistrosPorId(id: string): Observable<ModeloVehiculo>{    //Metodo para Buscar Vehiculos(listar)
+    return this.http.get<ModeloVehiculo>(`${this.url}/vehiculos/${id}`);
+  }
+
+  ActualizarVehiculo(vehiculo: ModeloVehiculo): Observable<ModeloVehiculo>{
+    return this.http.put<ModeloVehiculo>(`${this.url}/vehiculos/${vehiculo.id}`,vehiculo,{
+      headers: new HttpHeaders({ 
+        'Authorization':`Bearer${this.token}`
+      })
+    })
+  }
+  EliminarVehiculo(id:string):Observable<any>{
+    return this.http.delete(`${this.url}/vehiculos/${id}`,{
+      headers: new HttpHeaders({
+        'Authorization':`Bearer${this.token}`
+      })
+    })
+  }
+}
