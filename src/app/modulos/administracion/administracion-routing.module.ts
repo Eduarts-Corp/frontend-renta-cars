@@ -5,27 +5,34 @@ import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.co
 import { BuscarVehiculoComponent } from './vehiculos/buscar-vehiculo/buscar-vehiculo.component';
 import { CrearVehiculoComponent } from './vehiculos/crear-vehiculo/crear-vehiculo.component';
 import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehiculo.component';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 
 
 const routes: Routes = [
   {
     path: 'crear-usuario',
-    component: CrearUsuarioComponent
+    component: CrearUsuarioComponent,
+    
   },
   
   {
     path: 'crear-vehiculo',
-    component:CrearVehiculoComponent
+    component:CrearVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
+    
+    
   },
 
   {
     path: 'buscar-vehiculo',
-    component:BuscarVehiculoComponent
+    component:BuscarVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
   },
 
   {
     path: 'editar-vehiculo/:id',
-    component:EditarVehiculoComponent
+    component:EditarVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
   },
 
   {
@@ -40,7 +47,8 @@ const routes: Routes = [
 
   {
     path: 'crear-sede',
-    component:CrearSedeComponent
+    component:CrearSedeComponent,
+    canActivate: [ValidadorSesionGuard]
   }
 
 
