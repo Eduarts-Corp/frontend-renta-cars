@@ -1,1 +1,88 @@
-<p>eliminar-vehiculo works!</p>
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3"></div>
+        <h1 class="display-4 text-uppercase text-center mb-5">Eliminar Vehiculo</h1>    
+            <div class="row">    
+                <div class="col-5 mb-2"></div>
+                  <div class="contact-form bg-light mb-4" style="padding: 30px;">            
+       
+                         <article class= "col s6 offset-s3">
+<!--  -->
+            <form [formGroup] = "fgValidador" (ngSubmit)= "EliminarVehiculo()">
+                <input type="hidden" frmControlName="id"> <!--este hidden es para que No se pueda ver. Sea Invicible-->
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <label for="nombre" class="active">Nombre</label>
+                        <input formControlName="nombre" type="text" class="form-control p-4" placeholder="Marca" required="required">                        
+                      </div>
+                    <div class="col-5 form-group">
+                      <!--  <input formControlName="nombre" type="text" class="form-control p-4" placeholder="Marca" required="required">-->
+                      <label for="tipo" class="active">Tipo</label>
+                      <input formControlName="tipo" type="text" class="form-control p-4" placeholder="Tipo de vehiculo" required="required">
+                    </div>
+                    <div class="row"></div>
+                    <div class="col-6 form-group">
+                       <label for="ruta_foto" class="active">Foto</label>                     
+                      <input formControlName="ruta_foto" type="text" class="form-control p-4" placeholder="Foto" required="required">
+                    </div>               
+                    <div class="col-5 form-group">
+                        <label for="enlace_video" class="active">video</label>                   
+                   <input formControlName="enlace_video" type="text" class="form-control p-4" placeholder="Video" required="required">
+                    </div>
+                    <div class="col-6 form-group">
+                        <label for="estado" class="active">Estado del Vehiculo</label>
+                        <input formControlName="estado" type="text" class="form-control p-4" placeholder="Estado del Vehiculo" required="required">
+                    </div>
+                    <div class="col-5 form-group">
+                        <label for="valor_alquiler" class="active">Valor diario COP $</label>
+                        <input formControlName="valor_alquiler" type="number" class="form-control p-4" placeholder="Costo Valor dia de Alquiler - (COP $$$$)" required="required">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 form-group">
+                        <label for="nombre_encargado" class="active">Persona Encargada</label>
+                        <input formControlName="nombre_encargado" type="text" class="form-control p-4" placeholder="Nombre_encargado" required="required">
+                    </div>
+                    <div class="col-5 form-group">
+                        <label for="contacto_encargado" class="active">Contacto del Encargado</label>
+                        <input formControlName="contacto_encargado" type="text" class="form-control p-4" placeholder="Contacto_encargado" required="required">
+                    </div>
+
+                    <div>
+                        <button  class="btn btn-primary py-3 px-5" type="submit">Eliminar Vehiculo</button>
+                    </div>
+                </div>
+            <div>
+                ______________________________________________________________________________________________________________________________
+            </div>
+            
+
+                
+               
+                <div class="col-lg-11.5 mb-2">
+                    <div class="bg-secondary d-flex flex-column justify-content-center px-5 mb-4" style="height: 435px;">
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-2x fa-check-square text-primary flex-shrink-0 mr-3"></i>
+                            <div class="mt-n1">
+                                <h5 class="text-light">Paso 1</h5>
+                                <p>Ingrese los nuevos datos del Vehiculo </p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-2x fa-check-square text-primary flex-shrink-0 mr-3"></i>
+                            <div class="mt-n1">
+                                <h5 class="text-light">Paso 2</h5>
+                                <p>Asegurese que ha Ingresado los Datos Correctos</p>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-3">
+                            <i class="fa fa-2x fa-check-square text-primary flex-shrink-0 mr-3"></i>
+                            <div class="mt-n1">
+                                <h5 class="text-light">Paso 3</h5>
+                                <p>Dar Click en el Boton Guardar Actualizacion </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+

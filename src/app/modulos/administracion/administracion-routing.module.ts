@@ -6,6 +6,7 @@ import { BuscarVehiculoComponent } from './vehiculos/buscar-vehiculo/buscar-vehi
 import { CrearVehiculoComponent } from './vehiculos/crear-vehiculo/crear-vehiculo.component';
 import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehiculo.component';
 import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
+import { EliminarVehiculoComponent } from './vehiculos/eliminar-vehiculo/eliminar-vehiculo.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,12 @@ const routes: Routes = [
   {
     path: 'editar-vehiculo/:id',
     component:EditarVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
+  },
+
+  {
+    path: 'eliminar-vehiculo/:id',
+    component: EliminarVehiculoComponent,
     canActivate: [ValidadorSesionGuard]
   },
 
