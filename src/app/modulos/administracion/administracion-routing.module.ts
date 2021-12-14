@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { CrearSolicitudComponent } from './solicitudes/crear-solicitud/crear-solicitud.component';
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
+import { CrearVehiculoComponent } from './vehiculos/crear-vehiculo/crear-vehiculo.component';
+import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehiculo.component';
 import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-vehiculos.component';
 
 const routes: Routes = [
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'listar-solicitudes',
     component: ListarSolicitudesComponent
+  },
+  {
+    path: 'crear-vehiculo',
+    component: CrearVehiculoComponent
+  },
+  {
+    path: 'editar-vehiculo/:id',
+    component: EditarVehiculoComponent
   }
 ];
 

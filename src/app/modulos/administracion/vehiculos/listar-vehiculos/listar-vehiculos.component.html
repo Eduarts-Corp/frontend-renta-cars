@@ -1,28 +1,36 @@
-<div class="container-fluid" >
+<div class="container-fluid py-2 md-10">
     <div class="container pt-5 pb-3">
-        <h1 class="display-4 text-uppercase text-center mb-5">Renta un auto</h1>
-        <div class="row" >
-            <div class="col-lg-4 col-md-6 mb-2" *ngFor="let v of listadoVehiculos">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="{{v.ruta_foto}}" alt="">
-                    <h4 class="text-uppercase mb-4">{{v.descripcion}}</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>{{v.tipo}}</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-clipboard text-primary mr-1"></i>
-                            <span>{{v.estado}}</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-credit-card text-primary mr-1"></i>
-                            <span>COP {{v.valor_alquiler}}</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="">Solicitar</a>
-                </div>
-            </div>
-        </div>
+        <h1 class="display-4 text-uppercase text-center mb-5">Lista de Vehículos</h1>
+        <a routerLink="/administracion/crear-vehiculo">Registrar vehículo</a>
+        <table class="table lg-11">
+            <thead>
+                <tr>
+                    <th>Descripción</th> 
+                    <th>Tipo</th>
+                    <th>Foto</th>
+                    <th>Enlace video</th>
+                    <th>Estado</th>
+                    <th>Valor alquiler</th>
+                    <th>Nombre encargado</th>
+                    <th>Contacto encargado</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let v of listadoVehiculos" id="{{v.id}}">
+                    <td>{{v.descripcion}}</td>
+                    <td>{{v.tipo}}</td>
+                    <td><img class="imagenVehiculo" src="{{v.ruta_foto}}"/></td>
+                    <td>{{v.enlace_video}}</td>
+                    <td>{{v.estado}}</td>
+                    <td>{{v.valor_alquiler}}</td>
+                    <td>{{v.nombre_encargado}}</td>
+                    <td>{{v.contacto_encargado}}</td>
+                    <td><a routerLink="/administracion/editar-vehiculo/{{v.id}}">Editar</a></td>
+                    <td><a href="javascript:void(0)" (click)="confirmarEliminacion(v.id ? v.id : '')">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>

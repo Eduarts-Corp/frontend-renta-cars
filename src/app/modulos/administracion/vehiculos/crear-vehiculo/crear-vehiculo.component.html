@@ -1,0 +1,43 @@
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-4 text-uppercase text-center mb-5">Registro de vehículo</h1>
+        <div class="row justify-content-center">
+            <div class="col-lg-7 mb-2">
+                <div class="contact-form bg-light mb-4 py-4">
+                    <form [formGroup]="fgValidador" (ngSubmit)="AlmacenarVehiculo()">
+                        <div class="row justify-content-center">
+                            <div class="col-11 form-group">
+                                <input formControlName="descripcion" type="text" class="form-control p-4" placeholder="Descripción" required="required">
+                            </div>
+                            <div class="col-11 form-group">
+                                <input formControlName="tipo" type="text" class="form-control p-4" placeholder="Tipo" required="required">
+                            </div>
+
+                            <div class="col-11 form-group">
+                                <input formControlName="ruta_foto" type="text" class="form-control p-4" placeholder="Ruta foto" required="required">
+                            </div>
+                            <div class="col-11 form-group">
+                                <input formControlName="enlace_video" type="text" class="form-control p-4" placeholder="Enlace video">
+                            </div>
+                            <div class="col-11 form-group">
+                                <input formControlName="estado" type="text" class="form-control p-4" placeholder="Estado" required="required">
+                            </div>
+                            <div class="col-11 form-group">
+                                <input formControlName="valor_alquiler" type="text" class="form-control p-4" placeholder="Valor alquiler" required="required">
+                            </div>
+                            <div class="col-11 form-group">
+                                <input formControlName="nombre_encargado" type="text" class="form-control p-4" placeholder="Nombre encargado" required="required">
+                            </div>    
+                            <div class="col-11 form-group">
+                                <input formControlName="contacto_encargado" type="email" class="form-control p-4" placeholder="Contacto encargado" required="required">
+                            </div>                          
+                        </div>
+                        <div class="row justify-content-center">
+                            <button [disabled]="!fgValidador.valid" class="btn btn-primary py-3 px-5" type="submit">Guardar Vehiculo</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
