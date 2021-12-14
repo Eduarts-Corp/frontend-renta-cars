@@ -14,4 +14,8 @@ export class VehiculoService {
   ObtenerRegistros(): Observable<ModeloVehiculo[]>{
     return this.http.get<ModeloVehiculo[]>(`${this.url}/vehiculos`);
   }
+
+  ConsultarVehiculo(id:string): Observable<ModeloVehiculo>{
+    return this.http.get<ModeloVehiculo>(`${this.url}/vehiculos/${id}`);
+  }
 }

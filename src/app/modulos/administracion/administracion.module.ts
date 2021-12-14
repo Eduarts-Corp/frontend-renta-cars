@@ -9,6 +9,7 @@ import { EditarSolicitudComponent } from './solicitudes/editar-solicitud/editar-
 import { ConsultarSolicitudComponent } from './solicitudes/consultar-solicitud/consultar-solicitud.component';
 import { EliminarSolicitudComponent } from './solicitudes/eliminar-solicitud/eliminar-solicitud.component';
 import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-vehiculos.component';
+import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-ve
     EditarSolicitudComponent,
     ConsultarSolicitudComponent,
     EliminarSolicitudComponent,
-    ListarVehiculosComponent
+    ListarVehiculosComponent,
+    ListarSolicitudesComponent
   ],
   imports: [
     CommonModule,

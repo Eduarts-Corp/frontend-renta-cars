@@ -1,0 +1,29 @@
+<div class="container-fluid py-2">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-4 text-uppercase text-center mb-5">Lista de solicitudes</h1>
+        <table class="table ">
+            <thead>
+                <tr>
+                    <th>Tipo Vehículo</th>
+                    <th>Valor Alquiler</th>
+                    <th>Fecha Inicio</th> 
+                    <th>Fecha Final</th>
+                    <th>Estado</th>
+                    <th>Foto</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of listadoSolicitudVehiculo" id="{{s.id}}">
+                    <td>{{s.tipoVehiculo}}</td>
+                    <td>{{s.total_alquiler}}</td>
+                    <td>{{s.fecha_inicio}}</td>
+                    <td>{{s.fecha_final}}</td>
+                    <td>{{s.estado}}</td>
+                    <td><img class="imagenVehiculo" src="{{s.fotoVehiculo}}"/></td>
+                    <td><a  href="javascript:void(0)" (click)="confirmarEliminacion(s.id)">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

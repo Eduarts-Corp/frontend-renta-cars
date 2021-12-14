@@ -18,9 +18,21 @@ export class SolicitudService {
 
   CrearSolicitud(solicitud: ModeloSolicitud): Observable<ModeloSolicitud>{
     return this.http.post(`${this.url}/solicituds`, solicitud, {
-      headers: new HttpHeaders({
-        'Authorization': `Bearer ${this.token}`
-      })
+      //headers: new HttpHeaders({
+      //  'Authorization': `Bearer ${this.token}`
+      //})
+      headers: new HttpHeaders({})
     })
+  }
+  
+  ListarSolicitudes(): Observable<ModeloSolicitud[]>{
+    return this.http.get<ModeloSolicitud[]>(`${this.url}/solicituds`);
+  }
+
+  EliminarSolicitud(id: string): Observable<unknown> {
+    return this.http.delete(`${this.url}/solicituds/${id}`);
+    //, {
+    //  headers: new HttpHeaders({})
+    //})
   }
 }

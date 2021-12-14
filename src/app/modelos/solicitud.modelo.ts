@@ -5,4 +5,5 @@ export class ModeloSolicitud {
     fecha_final?: string;
     total_alquiler?: number;
     comentarios?: string;
+    vehiculoId?: string;
 }

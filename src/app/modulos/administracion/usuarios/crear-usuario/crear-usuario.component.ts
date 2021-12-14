@@ -44,5 +44,4 @@ export class CrearUsuarioComponent implements OnInit {
       alert("Error en el registro");
     });
   }
-
 }

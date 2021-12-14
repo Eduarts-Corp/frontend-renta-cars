@@ -15,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     BarraNavegacionComponent,
     PiePaginaComponent,
     InicioComponent,
-    ErrorComponent
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

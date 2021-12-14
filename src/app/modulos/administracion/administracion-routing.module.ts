@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CrearSolicitudComponent } from './solicitudes/crear-solicitud/crear-solicitud.component';
+import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
 import { ListarVehiculosComponent } from './vehiculos/listar-vehiculos/listar-vehiculos.component';
 
@@ -11,6 +13,14 @@ const routes: Routes = [
   {
     path: 'listar-vehiculos',
     component: ListarVehiculosComponent
+  },
+  {
+    path: 'solicitar-vehiculo/:vehiculo_id',
+    component: CrearSolicitudComponent
+  },
+  {
+    path: 'listar-solicitudes',
+    component: ListarSolicitudesComponent
   }
 ];
 
