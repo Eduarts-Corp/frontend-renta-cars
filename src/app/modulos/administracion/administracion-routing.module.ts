@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidadorSesionGuard } from 'src/app/guardianes/validador-sesion.guard';
 import { CrearSolicitudComponent } from './solicitudes/crear-solicitud/crear-solicitud.component';
 import { ListarSolicitudesComponent } from './solicitudes/listar-solicitudes/listar-solicitudes.component';
 import { CrearUsuarioComponent } from './usuarios/crear-usuario/crear-usuario.component';
@@ -14,23 +15,28 @@ const routes: Routes = [
   },
   {
     path: 'listar-vehiculos',
-    component: ListarVehiculosComponent
+    component: ListarVehiculosComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'solicitar-vehiculo/:vehiculo_id',
-    component: CrearSolicitudComponent
+    component: CrearSolicitudComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'listar-solicitudes',
-    component: ListarSolicitudesComponent
+    component: ListarSolicitudesComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'crear-vehiculo',
-    component: CrearVehiculoComponent
+    component: CrearVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
   },
   {
     path: 'editar-vehiculo/:id',
-    component: EditarVehiculoComponent
+    component: EditarVehiculoComponent,
+    canActivate: [ValidadorSesionGuard]
   }
 ];
 

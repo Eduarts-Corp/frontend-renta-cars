@@ -45,7 +45,6 @@ export class ListarSolicitudesComponent implements OnInit {
           this.listadoSolicitudVehiculo.push(this.vehiculoSolicitud);
           this.vehiculoSolicitud = {};
         }, (error: any) => {
-          alert("Error al consultar el vehículo");
         })
       })
     })

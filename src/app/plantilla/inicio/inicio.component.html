@@ -137,7 +137,8 @@
                             <span>COP {{v.valor_alquiler}}</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" routerLink="/administracion/solicitar-vehiculo/{{v.id}}">Solicitar</a>
+                    <a *ngIf="sesionIniciada" class="btn btn-primary px-3" routerLink="/administracion/solicitar-vehiculo/{{v.id}}">Solicitar</a>
+                    <a *ngIf="!sesionIniciada" class="btn btn-primary px-3" routerLink="/seguridad/login">Solicitar</a>
                 </div>
             </div>
         </div>
